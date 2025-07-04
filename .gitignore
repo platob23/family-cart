@@ -1,0 +1,51 @@
+# --------------------
+# Frontend (React + Vite)
+# --------------------
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env
+/frontend/.vite
+
+# --------------------
+# Backend (Spring Boot)
+/backend/target/
+/backend/.env
+/backend/*.iml
+/backend/logs/
+/backend/.idea/
+/backend/.classpath
+/backend/.project
+/backend/.settings
+/backend/.mvn/
+/backend/mvnw
+/backend/mvnw.cmd
+
+# --------------------
+# Global
+.env
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# --------------------
+# IntelliJ / VSCode
+.idea/
+.vscode/
+
+# --------------------
+# OS
+*.DS_Store
+*.AppleDouble
+*.LSOverride
+
+# --------------------
+# Docker
+**/docker-compose.override.yml
+**/.docker
+**/docker-compose.*.yml
+**/docker.env
+**/*.pid
+**/*.sock
