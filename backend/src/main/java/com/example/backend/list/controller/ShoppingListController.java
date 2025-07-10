@@ -1,4 +1,4 @@
 package com.example.backend.list.controller;
 
-public class ListController {
+public class ShoppingListController {
 }

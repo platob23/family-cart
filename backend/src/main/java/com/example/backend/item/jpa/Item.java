@@ -1,6 +1,6 @@
 package com.example.backend.item.jpa;
 
-import com.example.backend.list.jpa.List;
+import com.example.backend.list.jpa.ShoppingList;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,5 +32,5 @@ public class Item {
 
     @ManyToOne
     @JoinColumn(name = "list_id", nullable = false)
-    private List listID;
+    private ShoppingList shoppingList;
 }
