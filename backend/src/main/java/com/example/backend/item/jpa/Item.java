@@ -30,7 +30,7 @@ public class Item {
     @Column(name = "added_by")
     private String addedBy;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "list_id", nullable = false)
-    private ShoppingList shoppingListId;
+    private ShoppingList shoppingList;
 }

@@ -13,11 +13,14 @@ import java.util.Optional;
 @Service
 public class ItemService {
 
-    @Autowired
-    private ItemRepository itemRepository;
+    private final ItemRepository itemRepository;
 
-    @Autowired
-    private ItemMapper itemMapper;
+    private final ItemMapper itemMapper;
+
+    public ItemService(ItemRepository itemRepository, ItemMapper itemMapper) {
+        this.itemRepository = itemRepository;
+        this.itemMapper = itemMapper;
+    }
 
     public List<ItemDto> findAll() {
         List<Item> items = itemRepository.findAll();

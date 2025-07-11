@@ -1,17 +1,20 @@
 package com.example.backend.list.jpa;
 
+import com.example.backend.item.jpa.Item;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "shopping_list")
+@Table(name = "shopping_list", schema = "public")
 public class ShoppingList {
 
     @Id
@@ -29,5 +32,8 @@ public class ShoppingList {
 
     @Column
     private Boolean completed;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    List<Item> itemList;
 
 }

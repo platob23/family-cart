@@ -12,8 +12,6 @@ import lombok.NoArgsConstructor;
 @JsonPropertyOrder({"id, name, quantity, checked, addedBy"})
 public class ItemDto {
 
-
-
     @JsonProperty
     private Long id;
     @JsonProperty

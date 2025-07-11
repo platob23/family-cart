@@ -1,10 +1,8 @@
 package com.example.backend.item.controller;
 
 import com.example.backend.item.dto.ItemDto;
-import com.example.backend.item.jpa.Item;
 import com.example.backend.item.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,19 +18,19 @@ public class ItemController {
 
 
     @GetMapping
-    public ResponseEntity<List<ItemDto>> findAll() {
+    public ResponseEntity<List<ItemDto>> findAllItems() {
         return ResponseEntity.ok(itemService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ItemDto> findById(@PathVariable Long id) {
+    public ResponseEntity<ItemDto> findItemById(@PathVariable Long id) {
         Optional<ItemDto> itemDto = itemService.findById(id);
         return itemDto.map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("list/{listId}")
-    public ResponseEntity<List<ItemDto>> findByListId(@PathVariable Long listId) {
+    @GetMapping("inList/{listId}")
+    public ResponseEntity<List<ItemDto>> findItemsByListId(@PathVariable Long listId) {
         return ResponseEntity.ok(itemService.findByListId(listId));
     }
 
