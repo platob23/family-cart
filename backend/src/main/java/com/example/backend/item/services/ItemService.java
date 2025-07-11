@@ -21,11 +21,16 @@ public class ItemService {
 
     public List<ItemDto> findAll() {
         List<Item> items = itemRepository.findAll();
-        return itemMapper.ItemToItemDto(items);
+        return itemMapper.itemsToItemDto(items);
     }
 
     public Optional<ItemDto> findById(Long id) {
         Optional<Item> item = itemRepository.findById(id);
-        return item.map(itemMapper::ItemToItemDto);
+        return item.map(itemMapper::itemToItemDto);
+    }
+
+    public List<ItemDto> findByListId(Long listId) {
+        List<Item> items = itemRepository.findItemsByShoppingListId(listId);
+        return itemMapper.itemsToItemDto(items);
     }
 }

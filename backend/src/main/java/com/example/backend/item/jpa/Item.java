@@ -32,5 +32,5 @@ public class Item {
 
     @ManyToOne
     @JoinColumn(name = "list_id", nullable = false)
-    private ShoppingList shoppingList;
+    private ShoppingList shoppingListId;
 }

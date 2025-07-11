@@ -8,6 +8,6 @@ import java.util.List;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ItemMapper {
-    ItemDto ItemToItemDto(Item item);
-    List<ItemDto> ItemToItemDto(List<Item> items);
+    ItemDto itemToItemDto(Item item);
+    List<ItemDto> itemsToItemDto(List<Item> items);
 }
