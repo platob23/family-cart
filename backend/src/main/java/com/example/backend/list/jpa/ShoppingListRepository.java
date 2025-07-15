@@ -17,4 +17,6 @@ public interface ShoppingListRepository extends JpaRepository<ShoppingList, Long
 
     @Query("SELECT s FROM ShoppingList s WHERE s.completed = :completed AND s.id = :id")
     Optional<ShoppingList> findShoppingListByCompletedAndId(@Param("completed")Boolean completed, @Param("id") Long id);
+
+    Optional<ShoppingList> findShoppingListById(Long id);
 }

@@ -10,4 +10,5 @@ import java.util.List;
 public interface ItemMapper {
     ItemDto itemToItemDto(Item item);
     List<ItemDto> itemsToItemDto(List<Item> items);
+    Item itemDtoToItem(ItemDto itemDto);
 }

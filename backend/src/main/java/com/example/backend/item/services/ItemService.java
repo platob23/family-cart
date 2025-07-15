@@ -36,4 +36,10 @@ public class ItemService {
         List<Item> items = itemRepository.findItemsByShoppingListId(listId);
         return itemMapper.itemsToItemDto(items);
     }
+
+    public ItemDto createItem(ItemDto itemDto) {
+        Item item = itemMapper.itemDtoToItem(itemDto);
+        Item savedItem = itemRepository.save(item);
+        return itemMapper.itemToItemDto(savedItem);
+    }
 }

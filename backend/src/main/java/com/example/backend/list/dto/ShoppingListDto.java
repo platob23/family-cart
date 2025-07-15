@@ -18,9 +18,9 @@ public class ShoppingListDto {
     private Long id;
     @JsonProperty
     private String name;
-    @JsonProperty
+    @JsonProperty("created_at")
     private Timestamp createdAt;
-    @JsonProperty
+    @JsonProperty("created_by")
     private String createdBy;
     @JsonProperty
     private Boolean completed;

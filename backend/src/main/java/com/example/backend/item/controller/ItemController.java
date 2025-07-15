@@ -34,4 +34,10 @@ public class ItemController {
         return ResponseEntity.ok(itemService.findByListId(listId));
     }
 
+    @PostMapping
+    public ResponseEntity<ItemDto> createItem(@RequestBody ItemDto itemDto) {
+        ItemDto newItem = itemService.createItem(itemDto);
+        return ResponseEntity.ok(newItem);
+    }
+
 }
