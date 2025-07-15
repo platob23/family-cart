@@ -30,7 +30,6 @@ public class Item {
     @Column(name = "added_by")
     private String addedBy;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "list_id", nullable = false)
-    private ShoppingList shoppingList;
+    @Column(name = "list_id")
+    private Long listId;
 }

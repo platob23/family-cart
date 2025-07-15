@@ -34,7 +34,4 @@ public class ShoppingList {
     @Column
     private Boolean completed;
 
-    @OneToMany(mappedBy = "shoppingList", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Item> items = new ArrayList<>();
-
 }

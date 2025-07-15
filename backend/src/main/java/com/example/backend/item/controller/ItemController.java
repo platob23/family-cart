@@ -40,4 +40,18 @@ public class ItemController {
         return ResponseEntity.ok(newItem);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteItem(@PathVariable Long id) {
+        boolean deleted = itemService.deleteItem(id);
+        return deleted
+                ? ResponseEntity.ok("Item deleted successfully. ID: " + id)
+                : ResponseEntity.notFound().build();
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<ItemDto> patchItem(@PathVariable Long id, @RequestBody ItemDto updatedItem) {
+        ItemDto itemDto = itemService.patchItem(id, updatedItem);
+        return ResponseEntity.ok(itemDto);
+    }
+
 }
